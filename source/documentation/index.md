@@ -1,7 +1,10 @@
-# Standards and Guidance from the Government Security Group
+# Government Security Group standards and guidance 
 
-These pages contain or link to standards and guidance from the Government Security Group. The Government Security Group, or GSG, is responsible for holistic security across Her Majesty's Government. We have provided these guides and standards to support practitioners across our X,000 strong profession.
+The Government Security Group (GSG) is responsible for security across the UK government. 
 
-## Who is this documentation for?
+security.gov.uk will provide up-to-date guidance and standards to support security professionals across government.
 
-These pages are primarily aimed at security professionals in government
+If you have any questions or issues you can:
+
+- [post on the cross-government Slack channel](https://app.slack.com/client/T04V6EBTR/C069D3R1B)
+- open an issue on the [GitHub repo](https://github.com/cabinetoffice/gsg-guidance)
