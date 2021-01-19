@@ -1,5 +1,5 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: 
+host: security-docs.london.cloudapps.digital
 
 # Header-related options
 show_govuk_logo: false
@@ -32,7 +32,7 @@ collapsible_nav: false
 max_toc_heading_level: 6
 
 # Prevent robots from indexing (e.g. whilst in development)
-prevent_indexing: false
+prevent_indexing: true
 
 show_contribution_banner: true
 github_repo: alphagov/YOUR_REPO
