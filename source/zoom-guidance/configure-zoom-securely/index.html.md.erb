@@ -3,4 +3,345 @@ title: Configure Zoom securely
 weight: 11
 ---
 
-# [Placeholder for Configure Zoom securely content]
+# Configuring Zoom securely
+
+**Please email [securing-gov-services@digital.cabinet-office.gov.uk](mailto:securing-gov-services@digital.cabinet-office.gov.uk) if you have any questions or comments.**
+
+The Government Digital Service (GDS) has developed this guidance based on the NCSC [Video conferencing services: using them securely](https://www.ncsc.gov.uk/guidance/video-conferencing-services-using-them-securely) guidance.
+
+Follow this guidance if you’re responsible for configuring the [Zoom video conference tool](https://zoom.us/).
+
+## Accessing and configuring Zoom
+As an administrator, you must:
+
+- [access and configure the Zoom service using the web portal](https://zoom.us/)
+- tell hosts and participants to only use the web client application 
+- share guidance with users about how to join Zoom meetings
+
+We recommend that you do not download the Zoom desktop application. However, if your organisation wants to use the Zoom application, you must make sure:
+
+- this is risk assessed 
+- the relevant risk owner signs off this decision
+- you’ve implemented end-point device management policies to block content like contacts, calendars or files from being shared with the Zoom application
+
+## Zoom account management
+
+Your organisation, usually your IT department, must centrally manage the Zoom accounts. This will help make sure the Zoom accounts have consistent security, privacy and feature settings applied and consistent accountmanagement.
+
+We strongly recommend using account consolidation to make sure organisational control over Zoom accounts. This will also help avoid individuals creating Zoom accounts  using workplace email addresses outside of IT department visibility and management.
+
+## Zoom user accounts
+### For Zoom participants
+
+<%= warning_text("You do not need a licence for everyone who needs to use Zoom. You should tell your users to join a Zoom meeting as a guest (without signing in) and using the web client.") %>
+
+
+By default, access to meetings through the web client requires users to sign-in so you will need to disable this setting. To do this:
+
+Select the **ADMIN** option and go to **Account Management** and then **Account Settings**. 
+Find **Only authenticated users can join meetings from Web client** and switch this to **Off**.
+
+If all participants have a centrally managed Zoom account, the setting could be left switched on to allow only users with an account to join. However, this might impact the ability of users from outside your organisation to join Zoom meetings.
+
+Joining a Zoom meeting from the web client without signing in will reduce the number of Zoom licenses your organisation needs. This will also introduce better security and privacy as the web client is contained within a sandbox in the browser and does not have the same permissions as the installed application.
+
+### For Zoom hosts 
+
+**You should tell your users to host a Zoom meeting using a centrally managed licenced Zoom account and only through the web client.**
+
+You should allocate the “Member” role to the users who need to set up and host video conferencing calls. You should not allocate the “Admin” role to end users. 
+
+<%= warning_text("To help prevent issues like ‘Zoom bombing’ you should share guidance on how to use Zoom securely with your hosts and end users.") %>
+
+## Zoom tenant security configuration
+In the navigation menu:
+
+1. Go to Admin
+2. Select Advanced 
+3. Select Security
+
+### Authentication settings
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+|Authentication setup options|Admin settings to use|
+|:---|:---|
+|Minimum of 8 characters|Ticked (cannot be changed)|
+|Have at least 1 letter (a, b, c...)|Ticked (cannot be changed)|
+|Have at least 1 number (1, 2, 3...)|Ticked (cannot be changed)|
+|Include both upper case and lower case characters|Ticked (cannot be changed)|
+|Have a minimum password length|Ticked<br />Specify a password length: 12|"
+|Have at least 1 special character (!, @, #...)|Unticked|
+|Cannot contain consecutive characters (e.g. "123456" or "abcdef")|Ticked<br />Specify the length of consecutive characters: 4|"
+|Use enhanced weak password detection|Ticked|
+|New users need to change their passwords upon first sign-in|Ticked|
+|Password expires automatically and needs to be changed after the specified number of days|Unticked|
+|Users cannot reuse any password used in the previous X number of times|On, use the default (3)|
+|Users can change their password a maximum number of times every 24 hours|Unticked|
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+### Security Settings
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Security setup options|Admin settings to use|
+|:---|:---|
+|Only account admin can change licensed users' Personal Meeting ID and Personal Link Name|Off|
+|Allow importing of photos from the photo library on the user's device|Off|
+|Hide billing information from administrators<br />
+Allows only the account owner to see billing information|Off|
+|Users need to sign in again after a period of inactivity|Set period for inactivity on the web: 120 mins<br />
+Set period for inactivity on Zoom client: 120 mins|
+|User need to input Host Key to claim host role with the length of [x] digital number|6|
+|Sign in with Two-Factor Authentication<br />
+By enabling this setting, users need to sign in again to start using two-factor authentication|On<br />Select All users in your account<br />Authentication Methods:<br />- Authentication app: Ticked<br />- Text message: Unticked|
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+### Sign-in Methods
+
+We recommend turning on Single Sign On (SSO) if your organisation has a single identity provider and only users within your organisation will be hosting Zoom meetings. To use SSO you’ll need to sign up to a paid plan with more than 10 hosts such as Business or Education.
+
+If you need to use Zoom across several identity providers, or it's too hard to get SSO working, we recommend you disable this setting and follow [NCSC guidance for good authentication](https://www.ncsc.gov.uk/collection/passwords/updating-your-approach).
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+|Sign-in setup options|Admin settings to use|
+|:---|:---|
+|Allow users to sign in with work email|On|
+|Allow users to sign in with Google|Off - only allow if you use Google Workspace within your organisation and only allow users to sign in with their work Google account.|
+|Allow users to sign in with Facebook|Off|
+|Allow users to sign in with Apple ID|Off|
+|Show disclaimer when users sign in to Zoom|On - refer to section “Security messages for end-users” for suggested text to configure a custom disclaimer when users sign in to Zoom, either the first time, every time, or on a particular interval.|
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+## Integration
+In the navigation menu:
+
+1. Go to the **Admin** option
+2. Select **Advanced** 
+3. Select **Integration**
+
+You should disable integrations from the App Marketplace and Google (Calendar, Drive, Gmail), Dropbox, Microsoft Office 365 and OneDrive.
+
+If you are using multiple tools and want to create integrations between them, you need to understand the access they require, the security of your ecosystem, and any privacy considerations. You will also need to monitor cookie behaviour of third party tools.
+
+## Zoom meeting configuration
+In the navigation menu:
+
+1. Go to the **Admin** option
+2. Select **Account Management**
+3. Select **Account Settings**
+
+### Meeting settings
+Administrators can configure settings and then choose to **‘Lock’** or **‘Unlock’** settings depending on end user needs. Groups and members should use the following settings by default. 
+
+### Security
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Security setup options|Admin settings to use|
+|:---|:---|
+|Waiting Room|On (Leave unlocked for meeting host)|
+|Waiting Room Options|Everyone will go in the waiting room: ticked|
+|Meeting Passcode|On (Lock setting for meeting host)|
+|Required a passcode for meetings which have already been scheduled|Ticked|
+|Personal Meeting ID (PMI) Passcode|On (Lock setting for meeting host)|
+|Room Meeting ID Passcode|On (Lock setting for meeting host)|
+|Require passcode for participants joining by phone<br />Passcode Requirement|On (Lock setting for meeting host)|
+|Embed password in meeting link for one-click join|On (Leave unlocked for meeting host)|
+|Only authenticated users can join meetings|Off (Lock setting for meeting host) as this increases interoperability and reduces the number of licenses.|
+|If Waiting Room is not enabled, phone dial-in only users will:|Be allowed to join the meeting - selected|
+|Only authenticated users can join meetings from Web client|Off (leave setting unlocked for meeting host) as this increases interoperability and reduces the number of licenses.|
+|Approve or block entry to users from specific regions/countries|Off (leave setting unlocked for meeting host)|
+|Allow use of end-to-end encryption|Off (Lock setting for meeting host). If you choose to enable this you will not be able to access meetings by phone or from the web client. Remind the end users of the appropriate use cases for Zoom.|
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+### Schedule Meeting
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Schedule Meeting setup options|Admin settings to use|
+|:---|:---|
+|Host Video|Off (leave setting unlocked for meeting host)|
+|Participants video|Off (leave setting unlocked for meeting host)|
+|Audio Type|Telephone and Computer Audio (leave setting unlocked for meeting host)|
+|Allow participants to join before host|Off (Lock setting for meeting host)|
+|Enable Personal Meeting ID|On (leave setting unlocked for meeting host)|
+|Use Personal Meeting ID (PMI) when scheduling a meeting|Off (leave setting unlocked for meeting host)|
+|Use Personal Meeting ID (PMI) when starting an instant meeting|Off (leave setting unlocked for meeting host)|
+|Add watermark|Off (Lock setting for meeting host)|
+|Add audio watermark|Off (leave setting unlocked for meeting host)|
+|Always display "Zoom Meeting" as the meeting topic|Off (leave setting unlocked for meeting host)|
+|Bypass the passcode when joining meetings from meeting list|Off (Lock setting for meeting host)|
+|Mute all participants when they join a meeting|Off (Leave setting unlocked for meeting host)|
+|Upcoming meeting reminder|On (Leave setting unlocked for meeting host)|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+#### In Meeting (Basic)
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|In Meeting (Basic) setup options|Admin settings to use|
+|:---|:---|
+|Require encryption for 3rd party endpoints (SIP/H.323)|On (Leave setting unlocked for meeting host). Zoom supports Cisco, Polycom, Lifesize and other H.323/SIP endpoints.|
+|Chat|On (Leave setting unlocked for meeting host)|
+|Prevent Participants from Saving Chat|Ticked|
+|Private chat|On (Leave setting unlocked for meeting host)|
+|Auto saving chats|Off (Lock setting for meeting host)|
+|Sound notification when someone joins or leaves|On (Leave setting unlocked for meeting host)|
+|Play sound for Everyone or Host Only|Everyone|
+|Ask to record their voice to use as the notification|Ticked to notify attendees that a new participant joined the meeting by phone|
+|File transfer|Off (Lock setting for meeting host) unless you have use cases for it. This will allow your users to share and store documents on Zoom which may require further security, data protection and information governance considerations.|
+|Feedback to Zoom|Off (Lock setting for meeting host)|
+|Display end-of-meeting experience feedback survey|Off (Lock setting for meeting host)|
+|Co-host|On (Leave unlocked for meeting host)|
+|Polling|Off (Leave unlocked for meeting host)|
+|Always show meeting control toolbar|On (Leave unlocked for meeting host)|
+|Show Zoom windows during screen share|Off (Leave unlocked for meeting host)|
+|Screen sharing|On (Leave unlocked for meeting host)|
+|Who can share?|Select “All Participants”|
+|Who can start sharing when someone else is sharing?|Select “Host Only”|
+|Disable desktop/screen share for users|Off (Leave setting unlocked for meeting host)|
+|Annotation|On (Leave setting unlocked for meeting host)|
+|Allow saving of shared screens with annotations|Ticked|
+|Only the user who is sharing can annotate|Unticked|
+|Whiteboard|On (Leave setting unlocked for meeting host)|
+|Allow saving of whiteboard content|Ticked|
+|Auto save whiteboard content when sharing is stopped|Unticked|
+|Remote control|Off (Lock setting for meeting host)|
+|Nonverbal feedback|On (Leave setting unlocked for meeting host)|
+|Meeting reactions|On (Leave setting unlocked for meeting host)|
+|Allow removed participants to rejoin|Off (Lock setting for meeting host)|
+|Allow participants to rename themselves|On (Leave setting unlocked for meeting host)|
+|Hide participant profile pictures in a meeting|Off (Leave setting unlocked for meeting host)|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+#### In Meeting (Advanced)
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|In Meeting (Advanced) setup options|Admin settings to use|
+|:---|:---|
+|Report to Zoom|On (Leave setting unlocked for meeting host)|
+|Breakout room|Off (Leave setting unlocked for meeting host)|
+|Allow host to assign participants to breakout rooms when scheduling|Ticked|
+|Remote support|Off (Lock setting for meeting host)<br />Unless you have a strong use case why remote control of other devices through Zoom is required|
+|Closed captioning|On (Leave setting unlocked for meeting host)|
+|Save Captions|Off (Leave setting unlocked for meeting host)|
+|Far end camera control|Off (Lock setting for meeting host)|
+|Group HD video|On (Leave setting unlocked for meeting host)|
+|Virtual background|On (Leave setting unlocked for meeting host)|
+|Allow use of videos for virtual backgrounds|Ticked|
+|Allows users to upload custom backgrounds|Ticked|
+|Video filters|On (Leave setting unlocked for meeting host)|
+|Identify guest participants in the meeting/webinar|On (Lock setting for meeting host)|
+|Auto-answer group in chat|Off (Lock setting for meeting host)|
+|Peer to Peer connection while only 2 people in a meeting|On|
+|Listening ports range|Unticked|
+|Only show default email when sending email invites|Off (Leave setting unlocked for meeting host)|
+|Use HTML format email for Outlook plugin|Off (Lock setting for meeting host)|
+|DSCP marking|Off (Lock setting for meeting host)|
+|Allow users to select stereo audio in their client settings|Off (Leave setting unlocked for meeting host)|
+|Allow users to select original sound in their client settings|Off (Leave setting unlocked for meeting host)|
+|Customize data center regions for meeting/webinar data in transit|On (Lock setting for meeting host)<br />Select regions as appropriate:<br />Australia (yes)<br>Brazil (no)<br />Canada (yes)<br />China (no)<br />Germany (yes)<br />Hong Kong SAR (no)<br />India (no)<br />Ireland (yes)<br />Japan (no)<br />Netherlands (yes)<br />Singapore (no)<br />United States (preticked)|
+|Show a "Join from your browser" link|On (Lock setting for meeting host)|
+|Allow live streaming meetings|Off (Leave setting unlocked for meeting host)|
+|Allow Skype for Business (Lync) client to join a Zoom meeting|On|
+|Show a custom disclaimer when starting or joining a meeting|Off (Leave setting unlocked for meeting host)|
+|Request permission to unmute|Off (Leave setting unlocked for meeting host)|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+### Calendar and contacts
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Calendar and Contacts setup options|Admin settings to use|
+|:---|:---|
+|Calendar and Contacts integration|Off (Lock setting for meeting host)|
+|Consent to Office 365 calendar integration permissions on behalf of entire account|Off|
+|Enforce to use OAuth 2.0 only for authenticate Office365 calendar integration|Off|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+### Email notification
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Email Notification setup options|Admin settings to use|
+|:---|:---|
+|When a cloud recording is available|On (Lock setting for meeting host)|
+|When attendees join meeting before host|On (Leave setting unlocked for meeting host)|
+|When a meeting is cancelled|On (Leave setting unlocked for meeting host)|
+|When an alternative host is set or removed from a meeting|On (Leave setting unlocked for meeting host)|
+|When someone scheduled a meeting for a host|On (Leave setting unlocked for meeting host)|
+|When the cloud recording is going to be permanently deleted from trash|On (Lock setting for meeting host)|
+|When the meeting duration exceeds the limit|On|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+#### Admin options
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Admin Options setup options|Admin settings to use|
+|:---|:---|
+|Blur snapshot on iOS app switcher|On (Leave setting unlocked for meeting host)|
+|Display meetings scheduled for others|Off|
+|Use content delivery network (CDN)|On (select only the “Default” option)|
+|Require users to update the client|On (Leave setting unlocked for meeting host) If your organisation allows the desktop client you must also ensure the latest version is available for your users to install.|
+|Allow users to contact Zoom's Support via Chat|On|
+|Show one person meetings on Dashboard and Reports|On|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+## Zoom recording configuration
+
+In the navigation menu:
+
+1. Go to the **admin** option
+2. Select **Account Managment**
+3. Select **Account Settings**
+
+#### Recording settings
+
+Session video recording offers the ability to replay what was said for sharing or audit purposes. You must consider privacy and information management implications, and speak to your privacy or data protection teams before enabling video recording. In some cases consent forms and an update to your privacy notices might be necessary.
+
+<%= warning_text("You must not record conferences by default. Where you are required to enable session video recording, you must get authorisation from the Data Protection/Privacy Officer. The recommended setting is ‘local recording’. ") %>
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Recording setup options|Admin settings to use|
+|:---|:---|
+|Local recording|Off (Unlock setting for meeting host)|
+|Cloud recording|Off (Leave locked for meeting host)<br />Record active speaker with shared screen - ticked<br />Record an audio only file - ticked<br />Add a timestamp to the recording - ticked|
+|Automatic recording|Off (Lock setting for meeting host)|
+|Prevent hosts from accessing their cloud recordings|Off (Leave unlocked for meeting host)|
+|Cloud recording downloads|On (Lock setting for meeting host)|
+|Only the host can download cloud recordings|Ticked|
+|IP Address Access Control|Off (Lock setting for meeting host)|
+|Only authenticated users can view cloud recordings|On (Lock setting for meeting host)|
+|Authentication Options|Refer to guidance above for when to enable SSO authentication.|
+|Require passcode to access shared cloud recordings|On (Lock setting for meeting host)|
+|Require a password to access the existing cloud recordings|Ticked|
+|Set minimum passcode strength requirements|Have a minimum passcode length: 12<br />Have at least 1 letter (a, b, c...) - unticked<br />Have at least 1 number (1, 2, 3...) - unticked<br />Have at least 1 special character (!, @, #...) - unticked|
+|Viewers can see the transcript|On (Leave unlocked for meeting host)|
+|The host can delete cloud recordings|Off (Lock setting for meeting host)|
+|Auto delete cloud recordings after days|Off (Lock setting for meeting host)|
+|Allow recovery of deleted cloud recordings from Trash|On|
+|Push notification to subscription URL when a cloud recording is available|Off|
+|Recording disclaimer|On (Lock setting for meeting host)|
+|Ask participants for consent when a recording starts|Ticked|
+|Ask host to confirm before starting a recording|Ticked|
+|Multiple audio notifications of recorded meeting|On (Leave unlocked for meeting host)|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+
+## Zoom telephone configuration
+
+In the navigation menu:
+
+1. Go to the **admin** option
+2. Select **Account Managment**
+3. Select **Account Settings**
+
+#### Telephone settings
+
+<div style="height:1px;font-size:1px;">&nbsp;</div>
+|Telephone setup options|Admin settings to use|
+|:---|:---|
+|Toll Call|On (Lock for meeting host)|
+|Choose where most of the participants call into or call from the meeting|Europe (All of Europe)|
+|3rd Party Audio|Off (Leave unlocked for meeting host)|
+|Mask phone number in the participant list|On (Lock for meeting host)|
+|Global Dial-in Countries/Regions|As preferred|
+<div style="height:1px;font-size:1px;">&nbsp;</div>
