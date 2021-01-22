@@ -1,18 +1,16 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: 
+host: https://security.gov.uk
 
 # Header-related options
 show_govuk_logo: false
 service_name: Government Security Standards and Guidance
-service_link: https://www.larry-the-cat.service.gov.uk
+service_link: /
 phase: Alpha
 
 # Links to show on right-hand-side of header
 header_links:
-  About: https://www.larry-the-cat.service.gov.uk
-  Get Started: https://www.larry-the-cat.service.gov.uk/get-started
-  Documentation: /
-  Support: https://www.larry-the-cat.service.gov.uk/support
+  About: /
+  Support: mailto:security-help@cabinetoffice.gov.uk
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
@@ -35,4 +33,4 @@ max_toc_heading_level: 6
 prevent_indexing: false
 
 show_contribution_banner: true
-github_repo: alphagov/YOUR_REPO
+github_repo: alphagov/cabinetoffice/gsg-guidance
