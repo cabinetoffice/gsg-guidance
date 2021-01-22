@@ -7,7 +7,7 @@ weight: 1
 
 The Government Security Group (GSG) is responsible for security across the UK government. 
 
-Government security professional can find up-to-date guidance and standards on security.gov.uk.
+Government security professionals can find up-to-date guidance and standards on security.gov.uk.
 
 If you have any questions or issues you can:
 
