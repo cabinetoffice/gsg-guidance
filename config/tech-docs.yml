@@ -33,4 +33,4 @@ max_toc_heading_level: 6
 prevent_indexing: false
 
 show_contribution_banner: true
-github_repo: alphagov/cabinetoffice/gsg-guidance
+github_repo: cabinetoffice/gsg-guidance
