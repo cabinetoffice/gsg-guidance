@@ -28,7 +28,7 @@ jobs:
         cf7 version
 
     - name: Build docs with middleman
-      run: make build
+      run: bundle exec middleman build
 
     - name: Push to GOV.UK PaaS
       env:
