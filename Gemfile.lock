@@ -18,7 +18,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    commonmarker (0.22.0)
+    commonmarker (0.23.0)
     compass (1.0.3)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.2)
@@ -127,7 +127,7 @@ GEM
     mini_portile2 (2.6.1)
     minitest (5.14.4)
     multi_json (1.15.0)
-    nokogiri (1.12.3)
+    nokogiri (1.12.4)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     openapi3_parser (0.9.0)
