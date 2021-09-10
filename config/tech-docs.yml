@@ -9,8 +9,8 @@ phase: Alpha
 
 # Links to show on right-hand-side of header
 header_links:
-  About: /
-  Support: mailto:security-help@cabinetoffice.gov.uk
+  # About: /
+  # Support: mailto:security-help@cabinetoffice.gov.uk
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
