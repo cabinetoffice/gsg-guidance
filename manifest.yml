@@ -3,5 +3,5 @@ applications:
 - name: security-docs
   memory: 64M
   instances: 2
-  path: ./build
   buildpack: staticfile_buildpack
+  # uses Staticfile to configure buildpack and to use the build directory
