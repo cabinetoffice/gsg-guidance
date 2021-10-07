@@ -37,6 +37,6 @@ jobs:
         CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
       run: |
         cf api https://api.london.cloud.service.gov.uk
-        cf auth 
+        cf auth
         cf target -o cabinet-office-gsg -s gsg-guidance
-        cf push security-docs
+        cf push security-docs --strategy rolling
