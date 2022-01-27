@@ -34,3 +34,4 @@ prevent_indexing: false
 
 show_contribution_banner: true
 github_repo: cabinetoffice/gsg-guidance
+github_branch: main
