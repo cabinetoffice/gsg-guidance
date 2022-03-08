@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-push:
     # only run on the source repo
-    if: github.event.pull_request.head.repo.full_name == "cabinetoffice/gsg-guidance"
+    if: github.event.pull_request.head.repo.full_name == 'cabinetoffice/gsg-guidance'
     
     environment: deploy
     runs-on: ubuntu-latest
