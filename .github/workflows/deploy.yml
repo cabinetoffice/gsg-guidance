@@ -7,6 +7,9 @@ on:
 
 jobs:
   build-and-push:
+    # only run on the source repo
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    
     environment: deploy
     runs-on: ubuntu-latest
 
